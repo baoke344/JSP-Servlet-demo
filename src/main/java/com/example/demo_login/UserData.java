@@ -20,13 +20,13 @@ public class UserData {
         Connection conn = DriverManager.getConnection(url, props);
 
 
-        for(int i=0;i<1;i++){
-            String sql_insert = "INSERT INTO user_info_2(user_name, user_password" +
+
+        String sql_insert = "INSERT INTO user_info_2(user_name, user_password" +
                     "VALUES(?,?)";
-            PreparedStatement pstmt = conn.prepareStatement(sql_insert);
-            pstmt.setString(1, user.getUserName());
-            pstmt.setString(2, user.getUserPassword());
-            pstmt.execute();
-        }
+        PreparedStatement pstmt = conn.prepareStatement(sql_insert);
+        pstmt.setString(1, user.getUserName());
+        pstmt.setString(2, user.getUserPassword());
+        pstmt.execute();
+
     }
 }
